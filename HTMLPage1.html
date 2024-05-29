@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <title>Raya NS</title>
+    <link rel="stylesheet"
+          href="StyleSheet1.css"  type="text/css">
+</head>
+<body>
+    <section class="hero is-primary is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">Raya NS Tech Assessmet Form</h1>
+            </div>
+        </div>
+    </section>
+    <form id="techform" class="container m-4 pl-4" method="POST"
+          >
+        <div class="field">
+            <label class="label">اسم المشرف</label>
+            <div class="control">
+                <input list="techsups" name="techsup" class="option " id="techsup"
+                       placeholder="برجاء تحديد المشرف" />
+                <datalist id="techsups">
+                    <option value="شعبان حسن">
+                    <option value="وائل عبد الظاهر">
+                    <option value="سامي">
+                    <option value="">
+                    <option value="">
+                </datalist>
+
+
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">اسم الفني</label>
+            <div class="control">
+                <input list="techs" name="tech" class="option" id="tech"
+                       placeholder="برجاء تحديد الفني" />
+                <datalist id="techs">
+                    <option value="أحمد">
+                    <option value="رامي">
+                    <option value="سامي">
+                    <option value="رانيا">
+                    <option value="فريد">
+                </datalist>
+
+
+            </div>
+        </div>
+
+
+        <div class="field">
+            <label class="label">الموقع</label>
+            <div class="control">
+                <input list="sites" name="site" class="option" id="sit"
+                       placeholder="برجاء تحديد موقع العمل" />
+                <datalist id="sites">
+                    <option value="ايجي بنك">
+                    <option value="اي سيتي">
+                    <option value="تلي بيرفورمنس">
+                    <option value="ار دي سي">
+                    <option value="ماونتن فيو">
+                </datalist>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">تاريخ بداية المهمة</label>
+            <div class="control">
+                <input class="option"
+                       type="date"
+                   
+                       placeholder="task start date"
+                       name="DOB" />
+
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">التاريخ المتوقع لنهاية المهمة</label>
+            <div class="control">
+                <input class="option"
+                       type="date"
+                       placeholder="task end date"
+                       name="DOB end" />
+
+            </div>
+        </div>
+
+
+        <div class="field">
+            <label class="label">المهمة</label>
+            <div class="control">
+                <textarea class="textarea"
+                          placeholder="برجاء ادخال تفاصيل المهمة"
+                          name="Notes"></textarea>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">تقييم الانتاج</label>
+
+            <input list="pros" name="pro" class="production" id="pro"
+                   placeholder="برجاء تحديد نسبة " required />
+            <datalist id="pros">
+                <option value="5%">
+                <option value="10%">
+                <option value="15%">
+                <option value="20%">
+                <option value="25%">
+                <option value="30%">
+                <option value="35%">
+                <option value="40%">
+                <option value="45%">
+                <option value="50%">
+            </datalist>
+
+            <label class="label">تقييم الجودة</label>
+
+            <input list="quas" name="qua" class="production" id="qua"
+                   placeholder="برجاء تحديد نسبة " required />
+            <datalist id="quas">
+                <option value="5%">
+                <option value="10%">
+                <option value="15%">
+            </datalist>
+        </div>
+        <div class="field">
+            <label class="label">تقييم السلامة</label>
+
+            <input list="hses" name="hse" class="production" id="hse"
+                   placeholder="برجاء تحديد نسبة " required />
+            <datalist id="hses">
+                <option value="1%">
+                <option value="2%">
+                <option value="3%">
+                <option value="4">
+                <option value="5%">
+                <option value="6%">
+                <option value="7%">
+                <option value="8%">
+                <option value="9%">
+                <option value="10%">
+                <option value="11%">
+                <option value="12%">
+                <option value="13%">
+                <option value="14%">
+                <option value="15%">
+            </datalist>
+
+            <label class="label">تقييم التمثيل</label>
+
+            <input list="pre" name="pres" class="production" id="pres"
+                   placeholder="برجاء تحديد نسبة " required />
+            <datalist id="pre">
+                <option value="1%">
+                <option value="2%">
+                <option value="3%">
+                <option value="4%">
+                <option value="5%">
+            </datalist>
+        </div>
+
+
+        <div class="field is-grouped">
+            <div class="control2">
+                <button class="button" type="submit"  value="submit" id="submit-button">
+                    ادخال البيانات
+                </button>
+            </div>
+        </div>
+    </form>
+    <div id="message"
+         style="
+        display: none;
+        margin: 20px;
+        font-weight: bold;
+        color: green;
+        padding: 8px;
+        background-color: beige;
+        border-radius: 4px;
+        border-color: aquamarine;
+      "></div>
+    <script>
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzbjCF5Yuqo2j9sLRDmenhipzOAfhhDYbDlw8yz6RsRxtTaGPu5UaJTcJ51xLoIHr0FJg/exec'
+        const form = document.forms['techform']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => alert("شكرا لإدخال البيانات"))
+                .then(() => { window.location.reload(); })
+                .catch(error => console.error('فشل في إدخال البيانات!', error.message))
+        })
+    </script>
+    
+</body>
+</html>
